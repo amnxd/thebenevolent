@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+  <link rel="icon" href="logoB.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benevolent</title>
+  <style>
+    @font-face {
+      font-family: 'Micro 5';
+      src: url('https://fonts.google.com/specimen/Micro+5');
+    }
+
+    body {
+      font-family: "Micro 5", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    .char {
+      opacity: 0;
+      color: #ac0000;
+      animation: blink 0.5s infinite alternate;
+      font-size: 90px;
+    }
+
+    h1 {
+      font-size: 90px;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      body {
+        font-size: 45px;
+      }
+
+      .char {
+        font-size: 45px;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+    }
+
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+      body {
+        font-size: 60px;
+      }
+
+      .char {
+        font-size: 60px;
+      }
+
+      h1 {
+        font-size: 60px;
+      }
+    }
+
+    @media only screen and (min-width: 1025px) {
+      body {
+        font-size: 72px;
+      }
+
+      .char {
+        font-size: 72px;
+      }
+
+      h1 {
+        font-size: 72px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>
+    <span class="char">B </span><span class="char">e </span><span class="char">n </span><span class="char">e
+    </span><span class="char">v </span><span class="char">o </span><span class="char">l </span><span class="char">e
+    </span><span class="char">n </span><span class="char">t </span>
+  </h1>
+  <script>
+    const chars = document.querySelectorAll('.char');
+    chars.forEach((char, index) => {
+      char.animate([
+        { opacity: 0, transform: 'translateX(-100px)' },
+        { opacity: 1, transform: 'translateX(0)' }
+      ], {
+        duration: 10000,
+        delay: index * 100,
+        fill: 'forwards'
+      });
+    });
+  </script>
+</body>
+
+</html>
